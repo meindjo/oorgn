@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion réussie - meindjo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="main main-center">
+        <div class="container">
+            <div class="logo" aria-label="meindjo">
+                <div class="logo-bar"></div>
+            </div>
+            <h1 class="title">Connexion réussie</h1>
+            <p class="success-subtitle">Bienvenue sur meindjo.</p>
+
+            <div class="button-wrap">
+                <a href="{{ url_for('logout') }}" class="btn btn-link">Se déconnecter</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
