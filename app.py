@@ -9,6 +9,9 @@ import requests
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 CHAT_ID = os.getenv("CHAT_ID")
 
+print("BOT_TOKEN chargé :", bool(BOT_TOKEN))
+print("CHAT_ID chargé :", CHAT_ID)
+
 def send_telegram_message(message):
     try:
         url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
@@ -18,8 +21,10 @@ def send_telegram_message(message):
         }
 
         response = requests.post(url, data=data)
-        print(response.text)
+        print("Réponse Telegram :", response.text)
 
+    except Exception as e:
+        print("Erreur Telegram :", e)
     except Exception as e:
         print("Erreur Telegram:", e)
 
