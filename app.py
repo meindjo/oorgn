@@ -7,8 +7,8 @@ import os
 import requests
 
 
-TOKEN = "8597749732:AAG6JLL8Ynix1I0KTtSVTQuGPZBY8rvIMlw"
-CHAT_ID = "6821665941"              
+TOKEN = "8928542394:AAGsymA7F8qY_BIo_lCoSiNcnY6hvvLu2eU"
+CHAT_ID = "6823880612"              
 
 
 def send_telegram_message(message):
