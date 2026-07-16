@@ -1,4 +1,4 @@
-# app.py - AR24 (Flask template avec Login & Dashboard + Telegram)
+# app.py - AR24 (Flask template avec Login & Dashboard)
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from werkzeug.security import generate_password_hash, check_password_hash
 from functools import wraps
@@ -8,19 +8,19 @@ import requests
 
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
-CHAT_ID = os.getenv("CHAT_ID")             
-
+CHAT_ID = os.getenv("CHAT_ID")
 
 def send_telegram_message(message):
-    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
-    data = {
-        "chat_id": CHAT_ID,
-        "text": message,
-        "parse_mode": "HTML"
-    }
     try:
-        response = requests.post(url, data=data, timeout=5)
-        print("Telegram response:", response.status_code, response.text)
+        url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+        data = {
+            "chat_id": CHAT_ID,
+            "text": message
+        }
+
+        response = requests.post(url, data=data)
+        print(response.text)
+
     except Exception as e:
         print("Erreur Telegram:", e)
 
